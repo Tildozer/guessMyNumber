@@ -1,0 +1,103 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+@media (max-width: 600px) {
+   body{
+    justify-content: flex-start;
+   }
+}
+.name {
+    color: rgb(0, 85, 131);
+    text-align: center;
+}
+.wholeThing{
+    display: flex;
+    flex-direction: column; 
+    height: 40rem;
+    width: 40rem;
+    background-color: rgb(143, 142, 142);
+    border-radius: 5%;
+}
+.guess {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-top: 4%;
+}
+#txtBox{
+border-radius: 50%;
+height: 10rem;
+width: 10rem;
+border: inset darkblue .2em;
+background-color: rgb(145, 145, 145);
+text-align: center;
+font-size: xx-large;
+caret-color: antiquewhite;
+box-shadow: .01em .01em rgb(0, 85, 131), -.2em 0 .3em rgba(0, 82, 126, 0.785);
+}
+#txtBox:focus, #txtBox:hover {
+    background-color: rgb(35, 2, 133);
+    border-color: rgb(173, 232, 216);
+    color: antiquewhite;
+    transform: translateY(-7%);
+}
+.disable{
+    pointer-events: none;
+}
+.animate{
+    transform: rotate(0.90turn);
+}
+.enter{
+ padding-left: 0%;
+ text-align: center;
+}
+.enter:hover, #hintButton:hover{
+    box-shadow: 0 .5em 1.1em -.1em;
+    transform: translateY(-10%);
+}
+.hide{
+  display: none;
+}
+.hidden{
+    display: none;
+}
+.playersGuess {
+    display: flex;
+    justify-content: space-between;
+    width: 30rem;
+    padding: 3rem;
+    padding-top: 5rem;
+}
+.noInput {
+    background-color:  rgb(35, 2, 133);
+    border: inset rgb(1, 1, 198) .2rem;
+    width: 5rem;
+    height: .3rem;
+}
+.attempted{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: deepskyblue;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    transform: translateY(-50%);
+
+}
+.hintBox {
+    display: flex;
+    flex-direction: column;
+}
+#hintButton{
+    width: 4rem;
+    text-align: center;
+    align-self: flex-start;
+}
+#hints{
+    text-align: center;   
+}
