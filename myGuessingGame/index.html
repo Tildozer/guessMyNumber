@@ -12,25 +12,25 @@
     <!-- I put it all into on div, that way it can be added on to another site if needed. -->
     <div class='wholeThing'>
       <header class='name'>
-        <h1>Guess the number I 'think' of</h1>
-          <h2>Is today your lucky day?</h2>
+      <h1>Guess the number I 'think' of</h1>
+      <h2>Is today your lucky day?</h2>
       </header>
         <div class='guess'>
           <form autocomplete="off">
             <input id='txtBox' type='text' maxlength="3" onfocus="this.value = '' " value="[1 - 100]">
-              <button class='enter'> Make a guess! </button>
-                <button class="hide" type="submit" onClick="refreshPage()" >Reset game</button>
+            <button class='enter'> Make a guess! </button>
+            <button class="hide" type="submit" onClick="refreshPage()" >Reset game</button>
           </form>
             <div class='playersGuess'>
               <div class='noInput'></div>
-                <div class='noInput'></div>
-                  <div class='noInput'></div>
-                    <div class='noInput'></div>
-                      <div class='noInput'></div>
+              <div class='noInput'></div>
+              <div class='noInput'></div>
+              <div class='noInput'></div>
+              <div class='noInput'></div>
             </div>
             <div class="hintBox">
-                <button id="hintButton">Hint</button>
-                  <h2 id = "hints" ></h2>
+              <button id="hintButton">Hint</button>
+              <h2 id = "hints" ></h2>
             </div>
         </div>
     </div>

@@ -45,119 +45,121 @@ form.addEventListener('submit', (ev) => {
           return attempt;
 // when guess is correct   
   } else if(turnToNumber === answer){
-    hints.innerText = `Congrats, you got it correct! the number was ${answer}.`;
+      hints.innerText = `Congrats, you got it correct! the number was ${answer}.`;
       reset.classList.toggle('enter');
-        reset.classList.toggle('hide');
-          sub.classList.toggle('hide');
-            sub.classList.toggle('enter');
-              txtBox.classList.toggle('disable');
-                txtBox.classList.toggle('animate');
-                  hintButton.classList.toggle('hidden');  
-                    wholeApp.style.backgroundColor = 'green';
-                      toptxt.style.color = 'black';
-                        txtBox.style.backgroundColor = 'yellow';
-                          txtBox.style.color = 'Black';
-                            txtBox.style.borderColor = '#3CB371'
-                            hints.style.color = 'Black';
-                              txtBox.blur()
-                                return attempt;           
+      reset.classList.toggle('hide');
+      sub.classList.toggle('hide');
+      sub.classList.toggle('enter');
+      txtBox.classList.toggle('disable');
+      txtBox.classList.toggle('animate');
+      hintButton.classList.toggle('hidden');  
+      wholeApp.style.backgroundColor = 'green';
+      toptxt.style.color = 'black';
+      txtBox.style.backgroundColor = 'yellow';
+      txtBox.style.color = 'Black';
+      txtBox.style.borderColor = '#3CB371'
+      txtBox.blur();
+      hints.style.color = 'Black';
+      return attempt; 
   } else {
 // If guess is wrong, also incramite attempt by one to keep track of failed attempts.
       attempts[0].classList.toggle('attempted');
-        attempts[0].classList.toggle('noInput');
-          let newAttempt = document.getElementsByClassName('attempted');
-            newAttempt[attempt].innerText = `${txtBox.value}`;
-              attempt++;
-                txtBox.value = '';
-                  let diff = answer - turnToNumber;
-                    hotOrCold(diff)
+      attempts[0].classList.toggle('noInput');
+      let newAttempt = document.getElementsByClassName('attempted');
+      newAttempt[attempt].innerText = `${txtBox.value}`;
+      attempt++;
+      txtBox.value = '';
+      let diff = answer - turnToNumber;
+      hotOrCold(diff)
         }
 
         let attCheck = document.getElementsByClassName('attempted');
 // Player is out of attempts, game over.
         if(attCheck.length === 5){
           hints.innerText = `Better luck next time, the correct anwer was ${answer}.`;
-            reset.classList.toggle('enter');
-              reset.classList.toggle('hide');
-                sub.classList.toggle('hide');
-                  sub.classList.toggle('enter');
-                    txtBox.classList.toggle('disable');
-                      txtBox.classList.toggle('animate');
-                        hintButton.classList.toggle('hidden');
-                          wholeApp.style.backgroundColor = 'Grey';
-                            txtBox.style.backgroundColor = 'white';
-                              txtBox.style.borderColor = 'Black';
-                                toptxt.style.color = 'Ivory';
-                                  hints.style.color = 'Ivory';
-                                    txtBox.blur();
-                                      txtBox.value = `):`;
-                                        return attempt;
+          reset.classList.toggle('enter');
+          reset.classList.toggle('hide');
+          sub.classList.toggle('hide');
+          sub.classList.toggle('enter');
+          txtBox.classList.toggle('disable');
+          txtBox.classList.toggle('animate');
+          hintButton.classList.toggle('hidden');
+          wholeApp.style.backgroundColor = 'Grey';
+          txtBox.style.backgroundColor = 'white';
+          txtBox.style.borderColor = 'Black';
+          toptxt.style.color = 'Ivory';
+          hints.style.color = 'Ivory';
+          txtBox.blur();
+          txtBox.value = `):`;
+          return attempt;
         };
     });
 
     // Find if player needs to go higher or lower
   const hotOrCold = (diff) => {
         if(diff <= -1) {  
-            if(diff > -10){
-              hints.innerText = `You're right there! just a little lower!`;  
-                wholeApp.style.backgroundColor = '#FFD700';
-                  toptxt.style.color = '#5F9EA0';
-                    hints.style.color = '#5F9EA0';
-                      sub.style.backgroundColor = '#5F9EA0';
-                        sub.style.color = 'Cornsilk';
-                          txtBox.style.backgroundColor = '#2E8B57';
-                            txtBox.style.borderColor = '#5F9EA0';
-            } else if(diff >= -20){
-              hints.innerText = `Lukewarm! go lower.`
-                wholeApp.style.backgroundColor = 'DodgerBlue';
-                  toptxt.style.color = 'Black';
-                    hints.style.color = 'Black';
-                      sub.style.backgroundColor = 'DarkBlue';
-                        sub.style.color = '#3CB371';
-                          txtBox.style.borderColor = 'DarkBlue';
-                            txtBox.style.backgroundColor = '#AFEEEE';
-                              txtBox.style.color = 'Black'
-            } else {
-                hints.innerText = `Ice cold! try going lower.`;
-                  wholeApp.style.backgroundColor = 'Indigo';
-                    toptxt.style.color = 'AntiqueWhite';
-                      hints.style.color = 'AntiqueWhite';
-                        sub.style.backgroundColor = 'DarkBlue';
-                          sub.style.color = 'DeepSkyBlue';
-                            txtBox.style.borderColor = '#C71585';
-                              txtBox.style.backgroundColor = '#7B68EE';
+          if(diff > -10){
+            hints.innerText = `You're right there! just a little lower!`;  
+            wholeApp.style.backgroundColor = '#FFD700';
+            toptxt.style.color = '#5F9EA0';
+            hints.style.color = '#5F9EA0';
+            sub.style.backgroundColor = '#5F9EA0';
+            sub.style.color = 'Cornsilk';
+            txtBox.style.backgroundColor = '#2E8B57';
+            txtBox.style.borderColor = '#5F9EA0';
+            
+           } else if(diff >= -20){
+               hints.innerText = `Lukewarm! go lower.`
+               wholeApp.style.backgroundColor = 'DodgerBlue';
+               toptxt.style.color = 'Black';
+               hints.style.color = 'Black';
+               sub.style.backgroundColor = 'DarkBlue';
+               sub.style.color = '#3CB371';
+               txtBox.style.borderColor = 'DarkBlue';
+               txtBox.style.backgroundColor = '#AFEEEE';
+               txtBox.style.color = 'Black'
+          } else {
+              hints.innerText = `Ice cold! try going lower.`;
+              wholeApp.style.backgroundColor = 'Indigo';
+              toptxt.style.color = 'AntiqueWhite';
+              hints.style.color = 'AntiqueWhite';
+              sub.style.backgroundColor = 'DarkBlue';
+              sub.style.color = 'DeepSkyBlue';
+              txtBox.style.borderColor = '#C71585';
+              txtBox.style.backgroundColor = '#7B68EE';
             };
-        } else if(diff >= 1) {
-            if(diff < 10){
+
+          } else if(diff >= 1) {
+              if(diff < 10){
                 hints.innerText = `You're right there! just a little higher!`;
-                  wholeApp.style.backgroundColor = '#FFD700';
-                    toptxt.style.color = '#5F9EA0';
-                      hints.style.color = '#5F9EA0';
-                        sub.style.backgroundColor = '#5F9EA0';
-                          sub.style.color = 'Cornsilk';
-                            txtBox.style.backgroundColor = '#2E8B57';
-                              txtBox.style.borderColor = '#5F9EA0';
+                wholeApp.style.backgroundColor = '#FFD700';
+                toptxt.style.color = '#5F9EA0';
+                hints.style.color = '#5F9EA0';
+                sub.style.backgroundColor = '#5F9EA0';
+                sub.style.color = 'Cornsilk';
+                txtBox.style.backgroundColor = '#2E8B57';
+                txtBox.style.borderColor = '#5F9EA0';
             } else if(diff <= 20){
                 hints.innerText = `Lukewarm! go higher.`;
-                  wholeApp.style.backgroundColor = 'DodgerBlue';
-                    toptxt.style.color = 'Black';
-                      hints.style.color = 'Black';
-                        sub.style.backgroundColor = 'DarkBlue';
-                          sub.style.color = '	#3CB371';
-                            txtBox.style.borderColor = 'DarkBlue';
-                              txtBox.style.backgroundColor = '#AFEEEE';
-                                txtBox.style.color = 'Black'
+                wholeApp.style.backgroundColor = 'DodgerBlue';
+                toptxt.style.color = 'Black';
+                hints.style.color = 'Black';
+                sub.style.backgroundColor = 'DarkBlue';
+                sub.style.color = '	#3CB371';
+                txtBox.style.borderColor = 'DarkBlue';
+                txtBox.style.backgroundColor = '#AFEEEE';
+                txtBox.style.color = 'Black'
             } else if (diff < 101){
                 hints.innerText = 'Ice cold! try going higher.';
-                  wholeApp.style.backgroundColor = 'Indigo';
-                    toptxt.style.color = 'AntiqueWhite';
-                      hints.style.color = 'AntiqueWhite';
-                        sub.style.backgroundColor = 'DarkBlue';
-                          sub.style.color = 'DeepSkyBlue';
-                            txtBox.style.borderColor = '#C71585';
-                              txtBox.style.backgroundColor = '#7B68EE';
-        };
-      }      
-    };
+                wholeApp.style.backgroundColor = 'Indigo';
+                toptxt.style.color = 'AntiqueWhite';
+                hints.style.color = 'AntiqueWhite';
+                sub.style.backgroundColor = 'DarkBlue';
+                sub.style.color = 'DeepSkyBlue';
+                txtBox.style.borderColor = '#C71585';
+                txtBox.style.backgroundColor = '#7B68EE';
+              };
+            }
+          };      
    
 
